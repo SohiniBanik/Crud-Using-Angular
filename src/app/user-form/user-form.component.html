@@ -1,0 +1,8 @@
+<form>
+    <label>Last Name: <input [(ngModel)]="newUser.lastName" name="lastName" required></label><br>
+    <label>First Name: <input [(ngModel)]="newUser.firstName" name="firstName" required></label><br>
+    <label>Password: <input type="password" [(ngModel)]="newUser.password" name="password" required></label><br>
+    <button (click)="submitForm()">Submit</button>
+    <button (click)="clearForm()">Clear</button>
+    <button (click)="cancelForm()">Cancel</button>
+</form>

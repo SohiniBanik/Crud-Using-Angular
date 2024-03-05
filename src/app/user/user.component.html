@@ -1,0 +1,26 @@
+<div>
+    <button (click)="toggleForm()">Add User</button>
+</div>
+
+<app-user-form
+*ngIf="showForm"
+(userSubmitted)="addUsers($event)"
+(formCancelled)="toggleForm()">
+</app-user-form>
+
+<table *ngIf="users.length > 0">
+    <tr>
+        <th>Last Name</th>
+        <th></th>
+        <th>First Name</th>
+        <th></th>
+        <th>Password</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{ user.lastName }}</td>
+        <td></td>
+        <td>{{ user.firstName }}</td>
+        <td></td>
+        <td>{{ maskPassword(user.password) }}</td>
+    </tr>
+</table>
